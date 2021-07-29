@@ -1,0 +1,7 @@
+@import "variables";
+@import "functions";
+
+p {
+  font-size: rem(64px);
+  color: $primary-blue;
+}
