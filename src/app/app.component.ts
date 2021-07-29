@@ -28,7 +28,7 @@ export class AppComponent {
     
   }
   
-  patientdata(){
+  patientdata(i: any){
   //Here i will cal list of patients data API code
   }
 }
