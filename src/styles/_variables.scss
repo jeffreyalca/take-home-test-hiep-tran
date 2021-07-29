@@ -1,9 +1,17 @@
-$primary-blue: #0082ca;
-$light-blue: #3db5e6;
-$light-grey: #eaeaea;
+$breakpoint: 376px;
+
+$desktop-max-width: 1140px;
+$mobile-max-width: 375px;
 
 $font-root-size: 16px;
 $font-base-size: 16px;
-$font-base-family: 'Noto Sans', sans-serif;
+$font-base-family: "Noto Sans", sans-serif;
 $font-regular: 400;
 $font-bold: 700;
+
+$primary-blue: #0082ca;
+$light-blue: #3db5e6;
+$light-grey: #eaeaea;
+$black: #000000;
+$white: #ffffff;
+$red: #ff0000;

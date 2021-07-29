@@ -1,7 +1,29 @@
 @import "variables";
 @import "functions";
 
-p {
-  font-size: rem(64px);
-  color: $primary-blue;
+.header {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  padding: 10px;
+  max-width: $desktop-max-width;
+
+  &__logo {
+    margin-right: 10px;
+  }
+
+  &__text {
+    font-size: rem(20px);
+    font-weight: 700;
+    text-transform: capitalize;
+  }
+
+  @media screen and (min-width: $breakpoint) {
+    margin: 0 auto;
+
+    &__logo,
+    img {
+      width: 80px;
+    }
+  }
 }
