@@ -67,6 +67,7 @@ export class HomeComponent {
       }
 
       this.notFound = true;
+      this.patientName = [];
     });
   }
 
