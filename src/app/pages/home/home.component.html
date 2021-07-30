@@ -32,6 +32,7 @@
       <button
         class="search__form__btn-submit"
         type="submit"
+        [ngClass]="{'search__form__btn-submit--disabled': searchForm?.invalid}"
         [disabled]="searchForm?.invalid"
       >
         Search
