@@ -59,7 +59,6 @@ export class HomeComponent {
     }
 
     this.apiService.searchPatient(currentKeyword, ORDER_BY.DESC).subscribe((res) => {
-      console.log(res);
       if (res?.status === 200) {
         this.patientName = res?.result ?? [];
         this.notFound = false;
