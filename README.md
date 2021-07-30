@@ -21,6 +21,18 @@ The design team at Essilor has provided you with designs for a new patient searc
 -   You will find all the required assets in the `/images` folder. The assets are already optimized.
 -   There is also a `style-guide.md` file, containing the information you'll need, such as color palette and fonts.
 
+### Project setup:
+npm install
+
+### Build and development commands:
+npm start
+
+### Linting
+npm run lint
+
+### Build app
+npm run build
+
 ### Evaluation Criteria
 
 -   **TypeScript** best practices
