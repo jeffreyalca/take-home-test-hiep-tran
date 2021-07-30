@@ -1,4 +1,6 @@
-export const patientName = [{
+import { PatientName } from "models";
+
+export const patientName: PatientName[] = [{
   "id": 1,
   "first_name": "Merry",
   "last_name": "Baish"

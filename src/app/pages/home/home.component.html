@@ -1,36 +1,56 @@
 <main class="main">
   <div class="search">
-    <form class="search__form">
+    <form
+      class="search__form"
+      [formGroup]="searchForm"
+      (ngSubmit)="search(keyword?.value)"
+    >
       <div class="search__form__control">
-        <label class="search__form__control__label" for="keyword"
-          >Search by Patient</label
-        >
+        <label class="search__form__control__label" for="keyword">{{
+          formConfig?.label
+        }}</label>
         <input
           class="search__form__control__input"
-          type="text"
-          name="keyword"
-          id="keyword"
-          placeholder="Patient name"
+          [type]="formConfig?.type"
+          [name]="formConfig?.id"
+          [id]="formConfig?.id"
+          [placeholder]="formConfig?.placeholder"
+          formControlName="{{ formConfig?.id }}"
         />
-        <div class="search__form__control__error">
-          <p><span>[Field Name]</span> cannot contain any special characters</p>
+        <div
+          class="search__form__control__error"
+          *ngIf="keyword?.invalid && (keyword?.dirty || keyword?.touched)"
+        >
+          <p *ngIf="keyword?.errors?.excludePattern">
+            <span>{{ formConfig?.label }}</span> {{ errorMsg?.specialChar }}
+          </p>
+          <p *ngIf="keyword?.errors?.required">
+            <span>{{ formConfig?.label }}</span> {{ errorMsg?.empty }}
+          </p>
         </div>
       </div>
-      <button class="search__form__btn-submit" type="submit">Search</button>
+      <button
+        class="search__form__btn-submit"
+        type="submit"
+        [disabled]="searchForm?.invalid"
+      >
+        Search
+      </button>
     </form>
 
     <div class="search__result">
       <span class="search__result__title">Current searches</span>
+      <span class="search__result__list" *ngIf="notFound">{{
+        errorMsg?.notFound
+      }}</span>
       <ul class="search__result__list">
-        <li class="search__result__list__item">John</li>
-        <li class="search__result__list__item">John</li>
-        <li class="search__result__list__item">John</li>
-        <li class="search__result__list__item">John</li>
-        <li class="search__result__list__item">John</li>
-        <li class="search__result__list__item">John</li>
-        <li class="search__result__list__item">John</li>
-        <li class="search__result__list__item">John</li>
-        <li class="search__result__list__item">John</li>
+        <li
+          class="search__result__list__item"
+          (click)="clearSearch()"
+          *ngFor="let name of patientName"
+        >
+          {{ name }}
+        </li>
       </ul>
     </div>
   </div>
