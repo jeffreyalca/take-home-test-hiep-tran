@@ -1,4 +1,4 @@
-export const SORT_BY = {
+export const ORDER_BY = {
   ASC: 'ascending',
   DESC: 'descending',
 };

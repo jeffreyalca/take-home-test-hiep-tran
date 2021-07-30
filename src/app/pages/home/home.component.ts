@@ -2,7 +2,7 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { excludePattern } from 'validators';
 import { ApiService } from 'services';
-import { SORT_BY } from 'constants/constants';
+import { ORDER_BY } from 'constants/constants';
 
 @Component({
   selector: 'app-home',
@@ -58,7 +58,7 @@ export class HomeComponent {
       return;
     }
 
-    this.apiService.searchPatient(currentKeyword, SORT_BY.DESC).subscribe((res) => {
+    this.apiService.searchPatient(currentKeyword, ORDER_BY.DESC).subscribe((res) => {
       console.log(res);
       if (res?.status === 200) {
         this.patientName = res?.result ?? [];

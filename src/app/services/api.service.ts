@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { SORT_BY } from 'constants/constants';
+import { ORDER_BY } from 'constants/constants';
 import { patientName } from 'mocks';
 import { PatientResponse } from 'models';
 import { Observable, of } from 'rxjs';
@@ -17,7 +17,7 @@ export class ApiService {
    */
   searchPatient(
     keyword: string,
-    order: string = SORT_BY.ASC
+    order: string = ORDER_BY.ASC
   ): Observable<PatientResponse> {
     const result: string[] = patientName
       .filter(
@@ -27,7 +27,7 @@ export class ApiService {
       )
       .map(({ first_name, last_name }) => `${first_name} ${last_name}`);
 
-    if (order === SORT_BY.DESC) {
+    if (order === ORDER_BY.DESC) {
       result.sort((a, b) => {
         if (a.localeCompare(b) > 0) {
           return -1;
