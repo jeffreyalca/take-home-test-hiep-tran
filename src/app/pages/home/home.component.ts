@@ -38,10 +38,18 @@ export class HomeComponent {
     });
   }
 
+  /*
+   * Returns keyword form control
+   * @returns {AbstractControl}
+   */
   get keyword() {
     return this.searchForm.get('keyword');
   }
 
+  /*
+   * Search for patient name
+   * @param {string} keyword
+   */
   search(keyword: string = '') {
     const currentKeyword = keyword.trim();
 
@@ -62,6 +70,9 @@ export class HomeComponent {
     });
   }
 
+  /*
+   * Clear search input and result
+   */
   clearSearch() {
     this.keyword?.reset('');
     this.patientName = [];

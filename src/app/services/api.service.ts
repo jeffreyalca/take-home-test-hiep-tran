@@ -8,6 +8,13 @@ import { Observable, of } from 'rxjs';
   providedIn: 'root',
 })
 export class ApiService {
+  /*
+   * Simulate API logic that query patient name from DB
+   * Returns list of patient name
+   * @param {string} keyword
+   * @param {string} order
+   * @returns {Observable} API response with status and result
+   */
   searchPatient(
     keyword: string,
     order: string = SORT_BY.ASC
